@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helldivers 2 Stratagem Lookup</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-container">
+        <div
+          id="inputField"
+          class="input-like"
+          tabindex="0"
+          title="Input field for stratagem codes using WASD or arrow keys"
+        >
+          <span id="inputContent"></span>
+        </div>
+        <button id="copyButton" class="material-icons input-button" title="Copy">content_copy</button>
+        <button id="pasteButton" class="material-icons input-button" title="Paste">content_paste</button>
+        <button id="clearButton" class="material-icons input-button" title="Clear">delete_forever</button>
+      </div>
+      <ul id="stratagemList"></ul>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
