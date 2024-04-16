@@ -12,13 +12,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  border: 2px solid #ffcc00;
-  padding: 5px;
-}
-
 .input-like {
   flex-grow: 1;
   min-height: 30px;
@@ -38,11 +31,9 @@ li {
   border-bottom: 1px solid #ccc;
 }
 
-
 .material-icons {
   user-select: none;
 }
-
 
 .input-button {
   background: none;
@@ -57,21 +48,34 @@ li {
   transform: scale(0.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-      background-color: #333;
-      color: white;
-  }
-  .container {
-      background-color: #222;
-  }
-  .input-button {
-      color: #ffcc00;
-  }
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  padding: 5px;
 }
 
 .highlight {
-  color: #ffcc00;
+  color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: white;
+  }
+  .container {
+    background-color: #222;
+  }
+  .input-button {
+    color: #ffee00;
+  }
+  .input-container {
+    border: 2px solid #ffee00;
+  }
+  .highlight {
+    color: #ffee00;
+  }
 }
 
 .stratagem-item {
