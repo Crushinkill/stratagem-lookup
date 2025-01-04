@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let inputSequence = "";
     const unsorted_stratagems = {
         // Blue
@@ -82,19 +82,19 @@ $(document).ready(function() {
         '↑→↑←': 'Eagle 110MM Rocket Pods',
         '↑→↓↓↓': 'Eagle 500kg Bomb',
     };
-    
-    const arrowOrder = {'↓': 0, '→': 1, '↑': 2, '←': 3};
-    
+
+    const arrowOrder = { '↓': 0, '→': 1, '↑': 2, '←': 3 };
+
     function computeSortableValue(key) {
         return key.split('').map(arrow => arrowOrder[arrow]).join('');
     }
-    
+
     const sortedKeys = Object.keys(unsorted_stratagems).sort((a, b) => {
         const sortValA = computeSortableValue(a);
         const sortValB = computeSortableValue(b);
         return sortValA.localeCompare(sortValB);
     });
-    
+
     const stratagems = {};
     sortedKeys.forEach(key => {
         stratagems[key] = unsorted_stratagems[key];
@@ -122,11 +122,18 @@ $(document).ready(function() {
         'west': '←'
     }
 
-    $(document).keydown(function(event) {
+    const keyToMacro = {
+        '↑': 'UP',
+        '→': 'RIGHT',
+        '↓': 'DOWN',
+        '←': 'LEFT'
+    }
+
+    $(document).keydown(function (event) {
         if (event.ctrlKey && event.key === 'c') {
             $("#copyButton").click();
             event.preventDefault();
-        } 
+        }
         else if (event.ctrlKey && event.key === 'v') {
             $("#pasteButton").click();
             event.preventDefault();
@@ -139,7 +146,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#copyButton").click(function() {
+    $("#copyButton").click(function () {
         navigator.clipboard.writeText(inputSequence).then(() => {
             console.log("Copied to clipboard successfully!");
         }, (err) => {
@@ -147,11 +154,23 @@ $(document).ready(function() {
         });
     });
 
-    $("#pasteButton").click(async function() {
+    $("#copyMacroButton").click(function () {
+        if (inputSequence.length > 0) {
+            let mappedKeys = [...inputSequence].map(char => keyToMacro[char])
+            macro = `{{KeyDown:CTRL}{${mappedKeys.join("}{")}}{KeyUp:CTRL}}`
+            navigator.clipboard.writeText(macro).then(() => {
+                console.log("Copied to clipboard successfully!");
+            }, (err) => {
+                console.error("Could not copy text: ", err);
+            });
+        }
+    });
+
+    $("#pasteButton").click(async function () {
         try {
             const text = await navigator.clipboard.readText();
             const filtered = text.replace(/[^→↓↑←wasd]/gi, ''); // Remove all characters not WASD or arrows
-            let converted = filtered.replace(/[wasd]/gi, function(match) {
+            let converted = filtered.replace(/[wasd]/gi, function (match) {
                 return iconToArrow[keyToIcon[match.toLowerCase()]];
             });
             inputSequence = converted;
@@ -162,7 +181,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#clearButton").click(function() {
+    $("#clearButton").click(function () {
         clearInputs();
         $(this).css('transform', 'scale(0.8)');
         setTimeout(() => {
@@ -212,7 +231,7 @@ $(document).ready(function() {
 
     function updateList() {
         $("#stratagemList").empty();
-        $.each(stratagems, function(code, name) {
+        $.each(stratagems, function (code, name) {
             if (code.startsWith(inputSequence)) {
                 const matchedPart = code.substring(0, inputSequence.length);
                 const unmatchedPart = code.substring(inputSequence.length);
