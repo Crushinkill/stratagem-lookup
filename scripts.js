@@ -123,10 +123,10 @@ $(document).ready(function () {
     }
 
     const keyToMacro = {
-        '↑': 'UP',
-        '→': 'RIGHT',
-        '↓': 'DOWN',
-        '←': 'LEFT'
+        '↑': 'ArrowUp',
+        '→': 'ArrowRight',
+        '↓': 'ArrowDown',
+        '←': 'ArrowLeft'
     }
 
     $(document).keydown(function (event) {
@@ -157,7 +157,7 @@ $(document).ready(function () {
     $("#copyMacroButton").click(function () {
         if (inputSequence.length > 0) {
             let mappedKeys = [...inputSequence].map(char => keyToMacro[char])
-            macro = `{{KeyDown:CTRL}{${mappedKeys.join("}{")}}{KeyUp:CTRL}}`
+            macro = `{{KeyDown:CTRL}}{{${mappedKeys.join("}}{{PAUSE:25}}{{")}}}{{KeyUp:CTRL}}`
             navigator.clipboard.writeText(macro).then(() => {
                 console.log("Copied to clipboard successfully!");
             }, (err) => {
