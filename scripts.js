@@ -60,7 +60,7 @@ $(document).ready(function () {
         '↓↑→→←': 'A/MLS-4X Rocket Sentry',
         '↓↑→↓→': 'A/M-23 EMS Mortar Sentry',
         '↓↑←→→→': 'E/AT-12 Anti-Tank Emplacement',
-        '↓↑←→→→': 'A/FLAM-40 Flamethrower Sentry',
+        '↓↑→↓↑↑': 'A/FLAM-40 Flamethrower Sentry',
         // Red
         '→↓←↑↑': 'Orbital Gatling Barrage',
         '→→→': 'Orbital Airburst Strike',
