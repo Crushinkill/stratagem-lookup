@@ -29,6 +29,7 @@ $(document).ready(function () {
         '↓←↑↓←': 'TX-41 Sterilizer',
         '↓↑←↑→↑': 'AX/TX-13 "Guard Dog" Dog Breath',
         '↓↑←→↑↑': 'SH-51 Directional Shield',
+        '←↓→↓→↓↑': 'M-102 Fast Recon Vehicle',
         // Yellow
         '↑↓→←↑': 'Reinforce',
         '↑↓→↑': 'SOS Beacon',
