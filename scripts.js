@@ -30,6 +30,7 @@ $(document).ready(function () {
         '↓↑←↑→↑': 'AX/TX-13 "Guard Dog" Dog Breath',
         '↓↑←→↑↑': 'SH-51 Directional Shield',
         '←↓→↓→↓↑': 'M-102 Fast Recon Vehicle',
+        '↓→↑↑↑': 'B-100 Portable Hellbomb',
         // Yellow
         '↑↓→←↑': 'Reinforce',
         '↑↓→↑': 'SOS Beacon',
