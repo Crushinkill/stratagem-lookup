@@ -3,7 +3,10 @@ $(document).ready(function () {
     const unsorted_stratagems = {
         // Blue
         '↓↑↑↓↑': 'LIFT-850 Jump Pack',
+        '↓↑↑↓←→': 'LIFT-860 Hover Pack',
         '↓←↓↑↑↓': 'B-1 Supply Pack',
+        '↓↓↑↓→': 'StA-X3 W.A.S.P Launcher',
+        '↓←→→↑': 'CQC-1 One True Flag',
         '↓↑←↑→→': 'AX/LAS-5 "Guard Dog" Rover',
         '↓←↓↓↑←': 'SH-20 Ballistic Shield Backpack',
         '↓↑←→←→': 'SH-32 Shield Generator Pack',
@@ -63,6 +66,7 @@ $(document).ready(function () {
         '↓↑→↓→': 'A/M-23 EMS Mortar Sentry',
         '↓↑←→→→': 'E/AT-12 Anti-Tank Emplacement',
         '↓↑→↓↑↑': 'A/FLAM-40 Flamethrower Sentry',
+        '↓→↓←→': 'E/GL-21 Grenadier Battlement',
         // Red
         '→↓←↑↑': 'Orbital Gatling Barrage',
         '→→→': 'Orbital Airburst Strike',
