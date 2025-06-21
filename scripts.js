@@ -34,6 +34,9 @@ $(document).ready(function () {
         '↓↑←→↑↑': 'SH-51 Directional Shield',
         '←↓→↓→↓↑': 'M-102 Fast Recon Vehicle',
         '↓→↑↑↑': 'B-100 Portable Hellbomb',
+        '↑↓↑↑↓←': 'CQC-1 One True Flag',
+        '↓←↑←→↑': 'SG-88 Break-Action Shotgun',
+        '↓←→↑←↑': 'StA-X3 W.A.S.P. Launcher',
         // Yellow
         '↑↓→←↑': 'Reinforce',
         '↑↓→↑': 'SOS Beacon',
@@ -50,6 +53,7 @@ $(document).ready(function () {
         '↑←→↓↑↑': 'Dark Fluid Vessel',
         '↓←↑↓→': 'Tectonic Drill',
         '←↑↓→↓↓': 'Hive Breaker Drill',
+        '↑←→↓↑↑': 'Dark Fluid Vessel',
         // Green
         '↓↑←→→←': 'E/MG-101 HMG Emplacement',
         '↓↓←→←→': 'FX-12 Shield Generator Relay',
